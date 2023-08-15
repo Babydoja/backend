@@ -118,9 +118,9 @@ mongoose
         console.log(`server is now running ${PORT}` );
     })
     console.log('db connected');
-    // app.get('/',(req,res)=>{
-    // res.send('server home page')
-    // })
+    app.get('/',(req,res)=>{
+    res.send('server home page')
+    })
     // app.get('/about',(req,res)=>{
     // res.send('server about page')
     // })
