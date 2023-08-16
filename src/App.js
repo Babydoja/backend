@@ -104,7 +104,7 @@ const mongoose = require("mongoose")
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cors(
- {  origin:["http://localhost:3000","http://localhost:3001"] }
+ {  origin:["http://localhost:3000"," https://crudbackend-5qnk.onrender.com/"] }
 ))
 
 app.use(task_roter)
