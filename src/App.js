@@ -104,7 +104,7 @@ const mongoose = require("mongoose")
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cors(
- {  origin:["http://localhost:3000"," https://crudbackend-5qnk.onrender.com/"] }
+ {  origin:["http://localhost:3000","https://crudapps.vercel.app/"] }
 ))
 
 app.use(task_roter)

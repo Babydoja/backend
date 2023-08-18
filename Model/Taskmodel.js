@@ -7,9 +7,11 @@ const taskschema= mongoose.Schema(
             type:String,
             required:[true,'Please add a task']
         },
+        
 
        
     },
+   
     {
         timestamps:true
     }
