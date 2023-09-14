@@ -58,21 +58,25 @@ const deleteTaskById =(async(req,res) =>{
 
 })
 
-const updateTask =(async(req,res) =>{
-    
+const updateTask = async (req,res) =>{
     try {
-        // console.log(req.params)
-        const {id} =req.params 
-       const task = await Task.findByIdAndDelete(id) 
-       if (!task) {
-        return res.status(404).json(`no task without id :${id}`)
-        
-       }
-       res.status(200).json(task)
+        const {id} = req.params;
+        const task = await Task.findByIdAndUpdate(
+            {_id:id},
+            req.body,
+            {
+                new:true,
+                runValidators:true
+            }
+        );
+        if(!task){
+            return(
+                res.status(500).json(`no task found: ${id}`)
+            )
+        }
+        res.status(200).json(task)
     } catch (error) {
         res.status(500).json({msg:error.message})
     }
-
-})
-
+}
 module.exports = {createTask,getAllTask,getSingleTask,deleteTaskById,updateTask}
