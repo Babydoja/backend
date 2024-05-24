@@ -5,8 +5,6 @@ const Task = require('../Model/Taskmodel')
 const {createTask, getAllTask,getSingleTask,deleteTaskById,updateTask} = require('../Controller/TaskController')
 const router = express.Router()
 
-
-
 //create task
 // create task on post 
 router.post('/api/tasks',createTask)

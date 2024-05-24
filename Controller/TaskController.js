@@ -2,18 +2,15 @@ const Task = require("../Model/Taskmodel");
 
 // post method 
 const createTask = (async(req,res)=>{
-        try {
+        try { 
            const task = await Task.create(req.body) 
            res.status(200).json(task)
         } catch (error) {
             res.status(500).json({msg:error.message})
         }
-
 }
-
 )
 // Get All task 
-
 const getAllTask= (async(req,res)=>{
     try {
         const task = await Task.find() 
@@ -34,7 +31,7 @@ const getSingleTask =(async(req,res) =>{
         res.status(404).json(`no task with that id:${id}`)
 
     }
-    res.send("update succeffuly")
+    // res.send("update succeffuly")
     } catch (error) {
         res.status(500).json({msg:error.message})
     }
